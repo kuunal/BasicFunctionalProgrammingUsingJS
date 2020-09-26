@@ -48,5 +48,14 @@ function welcome(){
         return "Welcome"
     }
 } 
-let fn = welcome();
-console.log(fn())
+let fn = welcome(); // Will return anonymous func
+console.log(fn()) // Calling anonymous func
+
+// The functions which take other function as parameter or return
+// other funtions are called as High order funcction Because instead
+// of dealing with string, booleans , etc it deals with functions.
+// Real time example
+let numbers = [1,2,3]
+result = numbers.map(number=>number*2) // Map is takin function as argunent
+console.log(result)
+
