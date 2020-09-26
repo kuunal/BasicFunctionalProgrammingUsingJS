@@ -31,3 +31,12 @@ function sayHello(){
 }
 let fun = sayHello // Assignning function to var
 console.log(fun()) // Callin fucntion later through var
+
+
+// Passing funtion as paramter to another funtion
+// This actually can be very powerful. This actually opens up for
+// many cool things like decorators, Currying, etc.
+function greet(otherFunc){
+    console.log(otherFunc())
+}
+greet(sayHello)
