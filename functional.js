@@ -39,4 +39,14 @@ console.log(fun()) // Callin fucntion later through var
 function greet(otherFunc){
     console.log(otherFunc())
 }
-greet(sayHello)
+greet(sayHello) // Passing function without calling
+
+
+// Returning fucntion from other fiunctios
+function welcome(){
+    return function (){
+        return "Welcome"
+    }
+} 
+let fn = welcome();
+console.log(fn())
