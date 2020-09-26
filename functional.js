@@ -16,4 +16,9 @@
 // existing var or object. For that various libraries can be used Eg
 // Immutable by FB, Immer, etc. Basic JS like spread operator, 
 // array method like filter, map, reduce, slice, etc can also be used.
-// 
+
+
+//Advantages
+// More predictable
+// Easier to test and debug
+// more scalable
