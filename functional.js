@@ -56,6 +56,14 @@ console.log(fn()) // Calling anonymous func
 // of dealing with string, booleans , etc it deals with functions.
 // Real time example
 let numbers = [1,2,3]
-result = numbers.map(number=>number*2) // Map is takin function as argunent
+let result = numbers.map(number=>number*2) // Map is takin function as argunent
 console.log(result)
 
+
+// Trim the input and add inside of div tags in lower case 
+// using functional style
+const trimInput = str => str.trim(); 
+const wrapInDiv = str => `<div>${str}</div>`
+const lower = str => str.toLowerCase()
+result = lower(wrapInDiv(trimInput("     HELLO        ")));
+console.log(result)
