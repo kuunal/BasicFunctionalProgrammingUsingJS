@@ -22,3 +22,12 @@
 // More predictable
 // Easier to test and debug
 // more scalable
+
+
+// Function as First Class Citizen example
+// Assigning function to variable
+function sayHello(){
+    return "Hello World"
+}
+let fun = sayHello // Assignning function to var
+console.log(fun()) // Callin fucntion later through var
