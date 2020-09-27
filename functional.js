@@ -142,3 +142,29 @@ const demoPerson1 = {
 console.log(demoPerson1)
 console.log(person) 
 
+// Immutability practice for Arrays
+const array = [1,2,3,"s"]
+console.log(array)
+
+// adding items with achieving immutability
+const addItemInArray = ["at beg", ...array, "at end"]
+console.log(addItemInArray, array) // array is not mutated
+
+// adding items to specific position 
+// lets suppose adding at index 2 or before value 3
+const index = array.indexOf(3)
+const addAtSpecific =  [...array.slice(0, index),
+    "new item",
+     ...array.slice(index)]
+console.log(addAtSpecific, array)
+
+// Change some value from array
+let changedArray = array.map(value=>value !== "s" ? value : 4)
+console.log(changedArray)
+
+// exclude value from array
+changedArray = array.filter(value=> value!=="s")
+console.log(changedArray)
+const total = array.filter(value=>value!=="s").
+            reduce((item, currentTotal)=>item+currentTotal,0)
+console.log(total)
