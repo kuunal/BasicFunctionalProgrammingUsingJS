@@ -168,3 +168,14 @@ console.log(changedArray)
 const total = array.filter(value=>value!=="s").
             reduce((item, currentTotal)=>item+currentTotal,0)
 console.log(total)
+
+// Immutability libraries
+// ImmutableJS
+const immutable = require('immutable')
+const map = immutable.Map()
+console.log(map)
+const mapPerson = immutable.Map(person) // Not a regular JS obkect
+console.log(mapPerson.get("name")) // Get to access props
+console.log(mapPerson.toJS()) // This will return JS object
+mutatedObject = mapPerson.setIn(["address", "city"],"SF")
+console.log(mutatedObject.toJS())
