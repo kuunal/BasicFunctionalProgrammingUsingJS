@@ -179,3 +179,12 @@ console.log(mapPerson.get("name")) // Get to access props
 console.log(mapPerson.toJS()) // This will return JS object
 mutatedObject = mapPerson.setIn(["address", "city"],"SF")
 console.log(mutatedObject.toJS())
+
+
+// working with ImmutableJS brings different functions in our code
+// Another library is immer. It is similar to basic JS
+const immer =  require('immer');
+let updatedPerson = immer.produce(person, immerObjPerson=>{
+    immerObjPerson.address.city = "Chicago"
+})
+console.log(updatedPerson)
