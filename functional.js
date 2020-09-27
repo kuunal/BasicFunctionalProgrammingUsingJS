@@ -67,3 +67,10 @@ const wrapInDiv = str => `<div>${str}</div>`
 const lower = str => str.toLowerCase()
 result = lower(wrapInDiv(trimInput("     HELLO        ")));
 console.log(result)
+
+// Currying
+const multiply = (firstNum)=> (secondNum) => firstNum *secondNum
+console.log(multiply(2)(3))
+const firstResult = multiply(2)
+const secondResult = firstResult(3)  
+console.log(secondResult)
