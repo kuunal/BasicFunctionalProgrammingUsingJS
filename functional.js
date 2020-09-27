@@ -86,7 +86,6 @@ const calculateAverage = (...numbers)=>{
     return total/numbers.length
 }
 
-
 const outer = (func, ...numbers)=>{
     return function inner(...additionalNumbers){
         return func.apply(this, additionalNumbers.concat(numbers));
@@ -97,3 +96,49 @@ const outer = (func, ...numbers)=>{
 const outerResult = outer(calculateAverage, 1,2,3);
 const innerResult = outerResult(4,5,6)
 console.log(innerResult)
+
+
+// Immutability- Once created cannot change
+// if you want to change create new copy
+// JS objects, arrays are not immutable hence JS is not pure FP language 
+// Advantages ofn  imutability
+// Predictability, Faster change detection, Concurrency
+// Cons-
+// Perfromance, since object is copied to another object
+// Memory overhead- but we can reduce this by using libraries like 
+// immutable, immer or basic js techniques like Object.assign or spread operator, slice
+// and other array methdos. These things uses structural sharing.
+
+// Immutability practice for objects
+const person = {
+    name:"asdf",
+    age:21,
+    address : {
+        city:"NY",
+        country:"USA"
+    }
+}
+// creating shallow copy
+const newPerson = Object.assign({}, person, {name:"qwert"} ); 
+console.log(newPerson)
+// Another thing we can use is spread operator
+const anotherPerson = {...person, name:"zxc"}
+console.log(anotherPerson)
+// One thing to notice that it creates shallow copy 
+const demoPerson = {...person}
+//lets change address of demoPerson
+// both demoperson and person points to same address changing one will
+// affect other.    
+demoPerson.address.city="LA" 
+console.log(person) // city chaged to LA
+// TO avoid this we have to do deep copy i.e
+const demoPerson1 = {
+    ...person,
+    address: {
+        ...person.address,
+        city: "SF"
+    }
+}
+console.log(demoPerson1)
+console.log(person) 
+
