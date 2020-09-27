@@ -68,9 +68,32 @@ const lower = str => str.toLowerCase()
 result = lower(wrapInDiv(trimInput("     HELLO        ")));
 console.log(result)
 
+
 // Currying
 const multiply = (firstNum)=> (secondNum) => firstNum *secondNum
 console.log(multiply(2)(3))
 const firstResult = multiply(2)
 const secondResult = firstResult(3)  
 console.log(secondResult)
+
+// Average using currying
+
+const calculateAverage = (...numbers)=>{
+    let total = 0
+    for (number of numbers){
+        total += number
+    }
+    return total/numbers.length
+}
+
+
+const outer = (func, ...numbers)=>{
+    return function inner(...additionalNumbers){
+        return func.apply(this, additionalNumbers.concat(numbers));
+    }
+
+}
+
+const outerResult = outer(calculateAverage, 1,2,3);
+const innerResult = outerResult(4,5,6)
+console.log(innerResult)
